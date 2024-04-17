@@ -1,0 +1,60 @@
+.container {
+    margin-top: 50px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .bg-light {
+    background-color: #f8f9fa;
+  }
+
+  .account-info,
+  .order-history,
+  .settings {
+    margin-bottom: 30px;
+  }
+
+  .account-info p {
+    margin-bottom: 10px;
+  }
+
+  .order-history table {
+    width: 100%;
+  }
+
+  .order-history th,
+  .order-history td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .settings form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .settings form label {
+    font-weight: bold;
+  }
+
+  .settings form input[type="text"],
+  .settings form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .settings form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .settings form button:hover {
+    background-color: #0056b3;
+  }
