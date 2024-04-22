@@ -3,11 +3,6 @@
     
     <div id="top-header">
       <div class="container">
-        <ul class="header-links pull-left">
-          <li><a href="#"><i class="fa fa-phone"></i> 0934-495-4327</a></li>
-          <li><a href="#"><i class="fa fa-envelope-o"></i> chichart@email.com</a></li>
-          <li><a href="#"><i class="fa fa-map-marker"></i> 9000 Lapasan Road</a></li>
-        </ul>
         <ul class="header-links pull-right">
           <li><a href="#"><i class='fa-solid fa-peso-sign'></i>₱ PHP</a></li>
           <li><a href="#" onclick="openAccountMenu(event)"><i class="fa fa-user-o"></i> My Account</a></li>
@@ -99,8 +94,8 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<a href="index.php"><img src="" alt=""></a>
-								</a>
+									<h2 class="chichartlogo">ChiChart</h2>
+								</a>	
 							</div>
 						</div>
 						<!-- /LOGO -->

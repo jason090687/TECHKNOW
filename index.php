@@ -57,7 +57,7 @@ include('header.php');
 							<div class="shop-img">
 								<img src="./img/shop01.png" alt="">
 							</div>
-							<div class="shop-body">
+							<div class="shop-body">	
 								<h3>Laptop<br>Collection</h3>
 								<a href="store.php?cat=laptops" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
@@ -193,52 +193,6 @@ include('header.php');
 		</div>
 		<!-- /SECTION -->
 
-		<!-- HOT DEAL SECTION -->
-		<div id="hot-deal" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="hot-deal">
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3 id="days">02</h3>
-										<span>Days</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3 id="hours">10</h3>
-										<span>Hours</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3 id="minutes">34</h3>
-										<span>Mins</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3 id="seconds">60</h3>
-										<span>Secs</span>
-									</div>
-								</li>
-							</ul>
-
-							<h2 class="text-uppercase">hot deal this week</h2>
-							<p>New Collection Up to 10% OFF</p>
-							<a class="primary-btn cta-btn" href="store.php">Shop now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /HOT DEAL SECTION -->
 
 		<!-- SECTION -->
 		<div class="section">
