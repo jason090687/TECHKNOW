@@ -5,17 +5,8 @@
       <div class="container">
         <ul class="header-links pull-right">
           <li><a href="#"><i class='fa-solid fa-peso-sign'></i>₱ PHP</a></li>
-          <li><a href="#" onclick="openAccountMenu(event)"><i class="fa fa-user-o"></i> My Account</a></li>
+          <li><a href="home.php" onclick="openAccountMenu(event)"><i class="fa fa-user-o"></i> My Account</a></li>
           <div id="accountMenu" class="account-menu">
-            <?php
-            // Check if user is logged in
-            if (isset($_SESSION['customer_id'])) {
-              echo '<a href="profile.php">Profile</a>';
-              echo '<a href="logout.php">Logout</a>';
-            } else {
-              echo '<a href="#" onclick="openProfilePopup()">Login</a>';
-            }
-            ?>
           </div>
         </ul>
       </div>

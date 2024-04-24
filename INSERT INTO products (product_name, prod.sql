@@ -1,1 +1,0 @@
-INSERT INTO products (product_name, product_image, category_id, supplier_id, price, description) VALUES ('rwerew', '', '1', '1', '456', 'erwerew');

@@ -1,41 +1,82 @@
-<?php
-session_start();
-require_once('config.php');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Register</title>
+</head>
+<body>
+      <div class="container">
+        <div class="box form-box">
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $full_name = $_POST['Full_Name'];
-    $email = $_POST['Email'];
-    $address = $_POST['Address'];
-    $contact = $_POST['Contact'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+        <?php 
+         
+         include("php/config.php");
+         if(isset($_POST['submit'])){
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $age = $_POST['age'];
+            $password = $_POST['password'];
 
-    // Validate registration information
-    if ($password !== $confirm_password) {
-        header("Location: index.php?error=Passwords do not match");
-        exit();
-    }
+         //verifying the unique email
 
-    // Check if the email is already registered
-    $query = "SELECT * FROM customers WHERE email = '$email'";
-    $result = $connect->query($query);
+         $verify_query = mysqli_query($con,"SELECT Email FROM users WHERE Email='$email'");
 
-    if ($result->num_rows > 0) {
-        header("Location: index.php?error=Email already registered");
-        exit();
-    }
+         if(mysqli_num_rows($verify_query) !=0 ){
+            echo "<div class='message'>
+                      <p>This email is used, Try another One Please!</p>
+                  </div> <br>";
+            echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+         }
+         else{
 
-    // Insert new customer into the database
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO customers (customer_name, email, shipping_address, contact_number, password) VALUES ('$full_name', '$email', '$address', '$contact', '$hashed_password')";
-    if ($connect->query($query) === TRUE) {
-        $customer_id = $connect->insert_id;
-        $_SESSION['customer_id'] = $customer_id;
-        header("Location: index.php");
-        exit();
-    } else {
-        header("Location: index.php?error=Registration failed");
-        exit();
-    }
-}
-?>
+            mysqli_query($con,"INSERT INTO users(Username,Email,Age,Password) VALUES('$username','$email','$age','$password')") or die("Erroe Occured");
+
+            echo "<div class='message'>
+                      <p>Registration successfully!</p>
+                  </div> <br>";
+            echo "<a href='login.php'><button class='btn'>Login Now</button>";
+         
+
+         }
+
+         }else{
+         
+        ?>
+
+            <header>Sign Up</header>
+            <form action="" method="post">
+                <div class="field input">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" autocomplete="off" required>
+                </div>
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                </div>
+
+                <div class="field">
+                    
+                    <input type="submit" class="btn" name="submit" value="Register" required>
+                </div>
+                <div class="links">
+                    Already a member? <a href="index.php">Sign In</a>
+                </div>
+            </form>
+        </div>
+        <?php } ?>
+      </div>
+</body>
+</html>
