@@ -1,0 +1,20 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+th, td {
+    word-wrap: break-word;
+    text-align: center;
+    vertical-align: middle;
+}
+th:nth-child(3), td:nth-child(3) {
+    width: 100px;
+}
+th:nth-child(7), td:nth-child(7) {
+    width: 250px;
+}
+.table-wrapper {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+    margin-bottom: 20px;
+}

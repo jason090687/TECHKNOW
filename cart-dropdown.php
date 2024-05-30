@@ -32,7 +32,7 @@
     <h5 id="subtotal">SUBTOTAL: ₱<?=$subtotal;?></h5>
 </div>
 <div class="cart-btns">
-    <a href="#">View Cart</a>
+    <a href="viewcart.php">View Cart</a>
     <a href="checkout.php">Checkout <i class="fa fa-arrow-circle-right"></i></a>
 </div>
 </div>

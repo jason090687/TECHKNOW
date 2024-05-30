@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("db.php");
 // Fetch Products
 // iF has category, select from specific category
 $cat = isset($_GET['cat']) ? $_GET['cat'] : "all";
@@ -258,7 +258,7 @@ $product_lists = $connect->query($products);
                 // Fetch discount_amount from the discounts table based on product_id or any relevant criteria
                 $product_id = $row['product_id'];
                 $discount_query = "SELECT discount_amount FROM discounts WHERE product_id = $product_id";
-                $connect = mysqli_connect($server_name, $username, $pwd, $dbname);
+                $connect = new mysqli($servername, $username, $password, $dbname);
                 $discount_result = mysqli_query($connect, $discount_query); // Execute the discount query
                 if ($discount_result && mysqli_num_rows($discount_result) > 0) {
                     $discount_row = mysqli_fetch_assoc($discount_result);

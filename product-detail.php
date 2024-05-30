@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("db.php");
 $product_id = isset($_GET['id']) ? $_GET['id'] : "";
 
 // Fetch Specific Product
