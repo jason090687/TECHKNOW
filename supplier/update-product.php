@@ -1,5 +1,5 @@
 <?php
-include("../config.php");
+include("../db.php");
 
 if(isset($_POST['update'])){
     $product_id = $_POST['product_id'];

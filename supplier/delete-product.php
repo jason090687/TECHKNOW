@@ -1,6 +1,6 @@
 <?php
 
-include("../config.php");
+include("../db.php");
 
 // Delete a product
 if (isset($_GET['delete'])) {

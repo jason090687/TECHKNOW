@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['email'] = $email;
-            header("Location: index.php");
+            header("Location: dashboard.php");
             exit();
         } else {
             $error = "Invalid email or password.";
@@ -51,12 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="login-section">
             <div class="form-container">
                 <h2 class="title">ChiChart - Online Shopping</h2>
-                <h3>Welcome Back</h3>
+                <h3>Welcome Back Seller</h3>
                 <p>Log in to your account using email & password</p>
                 <?php if (isset($error)): ?>
                 <div class="error-message"><?= $error ?></div>
                 <?php endif; ?>
-                <form action="login.php" method="POST">
+                <form action="seller_login.php" method="POST">
                     <div class="input-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
@@ -74,7 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     <button type="submit" class="btn-login">LOGIN</button>
                 </form>
-                <p class="create-account">Don't have an account yet? <a href="register.php">Create an account</a></p>
+                <p class="create-account">Don't have an account yet? <a href="seller_signup.php">Create an account</a>
+                </p>
                 <div class="social-login">
                     <p>Login With</p>
                     <div class="social-buttons">

@@ -1,5 +1,5 @@
 <?php
-include("../config.php");
+include("../db.php");
 
 if(isset($_POST['submit'])){
     $product_name = $_POST['product_name'];
@@ -112,6 +112,7 @@ $customer_result = $connect->query($customer_query);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -124,22 +125,22 @@ $customer_result = $connect->query($customer_query);
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css" />
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="../css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="../css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="../css/slick-theme.css" />
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="../css/nouislider.min.css"/>
-    
+    <link type="text/css" rel="stylesheet" href="../css/nouislider.min.css" />
+
 
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="admin.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <link type="text/css" rel="stylesheet" href="admin.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -148,162 +149,166 @@ $customer_result = $connect->query($customer_query);
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
     <!-- HEADER -->
-		<header>
-			<!-- TOP HEADER -->
-			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> 0934-495-4327</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> techknow@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 9000 Lapasan Road</a></li>>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#">₱ PHP</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
+    <header>
+        <!-- TOP HEADER -->
+        <div id="top-header">
+            <div class="container">
+                <ul class="header-links pull-left">
+                    <li><a href="#"><i class="fa fa-phone"></i> 0934-495-4327</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i> techknow@email.com</a></li>
+                    <li><a href="#"><i class="fa fa-map-marker"></i> 9000 Lapasan Road</a></li>>
+                </ul>
+                <ul class="header-links pull-right">
+                    <li><a href="#">₱ PHP</a></li>
+                    <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /TOP HEADER -->
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						 <!-- LOGO -->
-                         <div class="col-md-3">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<a href="index.php"><img src="./img/logo.png" alt=""></a>
-								</a>
-							</div>
-						</div>
-						<!-- /LOGO -->
-
-						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
-					</div>
-					<!-- row -->
-                    <div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<a href="index.php"><img src="../img/logo.png" alt=""></a>
-								</a>
-							</div>
-						</div>
-						<!-- /LOGO -->
-				    </div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-               
-	
-		<!-- BREADCRUMB -->
-            <div id="breadcrumb" class="section">
-                <!-- container -->
-                <div class="container">
-                    <!-- row -->
-                    <div class="row">
-                        <div class="col6-md-12">
-                            <h3 class="breadcrumb-header">ADMIN PANEL</h3>
-                            <ul class="breadcrumb-tree">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#adding-product">Add Product</a></li>
-                                <li><a href="#product-Info">Product Information</a></li>
-                                <li><a href="#supplier-Info">Supplier Information</a></li>
-                                <li><a href="#customer-Info">Customer Information</a></li>
-
-                            </ul>
+        <!-- MAIN HEADER -->
+        <div id="header">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- LOGO -->
+                    <div class="col-md-3">
+                        <div class="header-logo">
+                            <a href="#" class="logo">
+                                <a href="index.php"><img src="./img/logo.png" alt=""></a>
+                            </a>
                         </div>
                     </div>
-                    <!-- /row -->
+                    <!-- /LOGO -->
+
+                    <!-- ACCOUNT -->
+                    <div class="col-md-3 clearfix">
+                    </div>
                 </div>
-                <!-- /container -->
+                <!-- /ACCOUNT -->
             </div>
-        <!-- /BREADCRUMB -->
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="#" class="logo">
+                            <a href="index.php"><img src="../img/logo.png" alt=""></a>
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- /MAIN HEADER -->
+    </header>
+    <!-- /HEADER -->
+
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col6-md-12">
+                    <h3 class="breadcrumb-header">ADMIN PANEL</h3>
+                    <ul class="breadcrumb-tree">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#adding-product">Add Product</a></li>
+                        <li><a href="#product-Info">Product Information</a></li>
+                        <li><a href="#supplier-Info">Supplier Information</a></li>
+                        <li><a href="#customer-Info">Customer Information</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /BREADCRUMB -->
 
     <div class="container">
-    
-    <section id="adding-product">
-    <form action="admin.php" method="POST" enctype="multipart/form-data">
-        <h2><br>Adding Product</h2><br>
-        <label for="product_name">Product Name</label>
-        <input type="text" name="product_name" id="product_name" placeholder="Product Name"/><br>
 
-        <label for="product_image">Product Image</label>
-        <input type="file" name="product_image" id="product_image"  required/> <br>
+        <section id="adding-product">
+            <form action="admin.php" method="POST" enctype="multipart/form-data">
+                <h2><br>Adding Product</h2><br>
+                <label for="product_name">Product Name</label>
+                <input type="text" name="product_name" id="product_name" placeholder="Product Name" /><br>
 
-        <label for="product_description">Product Description</label>
-        <textarea name="product_description" id="product_description" placeholder="Product Description" required></textarea><br> 
+                <label for="product_image">Product Image</label>
+                <input type="file" name="product_image" id="product_image" required /> <br>
 
-        <label for="price">Price</label>
-        <input type="text" name="price" id="price" placeholder="Product Price"/><br>
+                <label for="product_description">Product Description</label>
+                <textarea name="product_description" id="product_description" placeholder="Product Description"
+                    required></textarea><br>
 
-        <label for="discount_amount">Discount Amount</label>
-        <input type="text" name="discount_amount" id="discount_amount" placeholder="Discount amount"><br>
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" placeholder="Product Price" /><br>
 
-        <label for="start_date">Start Date</label>
-        <input type="date" name="start_date" id="start_date"><br>
+                <label for="discount_amount">Discount Amount</label>
+                <input type="text" name="discount_amount" id="discount_amount" placeholder="Discount amount"><br>
 
-        <label for="end_date">End Date</label>
-        <input type="date" name="end_date" id="end_date"><br>
+                <label for="start_date">Start Date</label>
+                <input type="date" name="start_date" id="start_date"><br>
 
-        <label for="category_id">Category</label>
-        <select name="category_id" id="category_id" required>
-            <option value="1">Laptops</option>
-            <option value="2">Smartwatches</option>
-            <option value="3">Cellphones</option>
-            <option value="4">Cameras</option>
-            <option value="5">Headphones</option>
-        </select>
+                <label for="end_date">End Date</label>
+                <input type="date" name="end_date" id="end_date"><br>
 
-        <br><label for="supplier_name">Supplier Name</label>
-        <input type="text" name="supplier_name" id="supplier_name" placeholder="Supplier Name" required/><br>
+                <label for="category_id">Category</label>
+                <select name="category_id" id="category_id" required>
+                    <option value="1">Laptops</option>
+                    <option value="2">Smartwatches</option>
+                    <option value="3">Cellphones</option>
+                    <option value="4">Cameras</option>
+                    <option value="5">Headphones</option>
+                </select>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="email" required/><br>
+                <br><label for="supplier_name">Supplier Name</label>
+                <input type="text" name="supplier_name" id="supplier_name" placeholder="Supplier Name" required /><br>
 
-        <label for="supplier_address">Supplier Address</label>
-        <input type="text" name="supplier_address" id="supplier_address" placeholder="Supplier Address" required/><br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="email" required /><br>
 
-        <label for="contact_number">Contact Number</label>
-        <input type="text" name="contact_number" id="contact_number" placeholder="Contact Number" required/><br>
+                <label for="supplier_address">Supplier Address</label>
+                <input type="text" name="supplier_address" id="supplier_address" placeholder="Supplier Address"
+                    required /><br>
 
-        <button type="submit" name="submit" class='save-button' >Save</button>
-    </form> 
-</section>
+                <label for="contact_number">Contact Number</label>
+                <input type="text" name="contact_number" id="contact_number" placeholder="Contact Number"
+                    required /><br>
 
-    </section>
+                <button type="submit" name="submit" class='save-button'>Save</button>
+            </form>
+        </section>
 
-    <section id="product-Info">
-        <div class="container">
-            <h2><br><br>Product Information</h2><br>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Product Image</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Discounted Amount</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Action</th> <!-- New column -->
-                </tr>
-            </thead>
-            <tbody>
-                <?php
+        </section>
+
+        <section id="product-Info">
+            <div class="container">
+                <h2><br><br>Product Information</h2><br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Discounted Amount</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Action</th> <!-- New column -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                 if ($product_result->num_rows > 0) {
                     while ($product_row = $product_result->fetch_assoc()) {
                         echo "<tr>";
@@ -325,11 +330,11 @@ $customer_result = $connect->query($customer_query);
                     echo "<tr><td colspan='8'>No products found.</td></tr>";
                 }
                 ?>
-            </tbody>
-        </table>
-    </section>
+                    </tbody>
+                </table>
+        </section>
 
-    <section id="supplier-Info">
+        <section id="supplier-Info">
             <div class="container">
                 <h2><br><br>Supplier Information</h2><br>
                 <table class="table">
@@ -390,48 +395,52 @@ $customer_result = $connect->query($customer_query);
                 </table>
             </div>
         </section>
-</div>
+    </div>
 
     <section>
-			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
+        <!-- bottom footer -->
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                        </ul>
+                        <span class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </span>
 
 
-						</div>
-					</div>
-						<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /bottom footer -->
-		</footer>
-		<!-- /FOOTER -->
-        
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /bottom footer -->
+        </footer>
+        <!-- /FOOTER -->
 
-<!-- jQuery Plugins -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
-<script src="js/main.js"></script>
-<script src="admin.js"></script>
+
+        <!-- jQuery Plugins -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/nouislider.min.js"></script>
+        <script src="js/jquery.zoom.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="admin.js"></script>
 </body>
+
 </html>

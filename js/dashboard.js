@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
         dashboard.style.display = 'flex';
     }
 
-    window.login = function() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+    // window.login = function() {
+    //     const username = document.getElementById('username').value;
+    //     const password = document.getElementById('password').value;
 
-        if (username === 'admin' && password === 'admin') {
-            showDashboard();
-            localStorage.setItem('isLoggedIn', 'true');
-        } else {
-            loginError.textContent = 'Invalid username or password';
-        }
-    }
+    //     if (username === 'admin' && password === 'admin') {
+    //         showDashboard();
+    //         localStorage.setItem('isLoggedIn', 'true');
+    //     } else {
+    //         loginError.textContent = 'Invalid username or password';
+    //     }
+    // }
 
     window.logout = function() {
         showLoginForm();
